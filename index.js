@@ -23,7 +23,6 @@ const songs = [
     { title: "Jeremy", artist: "Pearl Jam", genre: "Grunge"},
     { title:"Leave me alone", artist:"Kaytranda", genre: "House"},
     { title:"baby can you reach", artist:"Todd Terry", genre: "House"},
-    // Feel free to add even more songs
 ];
 
 
@@ -37,40 +36,51 @@ const guardians = {
 };
 
 // Function to generate playlist based on preferred genre
-let firstSong = "Tame";
+let firstSong = "Tame";  //PLACEHOLDER VARIABLE, MUST CHANGE LATER
 
-function generatePlaylist(guardians, songs) {                           //THIS IS FOR DISPLAYING THE LISTS
-    // Use the map() function to create playlists for each Guardian    //I'm supposed to use map to extract song name and artist
+//filter songs to separate songs by preferred genre
+const grootPlaylist = songs.filter(preference => preference.genre === "Indie"); 
+const startlordPlaylist = songs.filter(preference => preference.genre === "Rock");
+const draxPlaylist = songs.filter(preference => preference.genre === "House");
+const gamoraPlaylist = songs.filter(preference => preference.genre === "Pop");
+const rocketPlaylist = songs.filter(preference => preference.genre === "Grunge");
 
-    //=== MY CODE ===
+function generatePlaylist(guardians, songs) {                          
+    // Use the map() function to create playlists for each Guardian   
+const grootSongs = grootPlaylist.map(preference => preference.title + "" + preference.artist)
+const starlordSongs = startlordPlaylist.map(preference => preference.title + ""+ preference.artist)
+const draxSongs = draxPlaylist.map(preference => preference.title +""+ preference.artist)
+const gamoraSongs = gamoraPlaylist.map(preference => preference.title + "" + preference.artist)
+const rocketSongs = rocketPlaylist.map(preference => preference.title +"" + preference.artist)
+    
+    //=== MY CODE, TO CREATE A NEW PARAGRAPH ELEMENT AND DISPLAY IT FOR EACH PLAYLIST ===
 //enabling display plai=ylists functionality
   let playlistsDiv = document.getElementById('playlists');
 
   //Creating and appending Groot's Playlist to the div element to display the text
     let grootPlaylistElement = document.createElement('p');
-    grootPlaylistElement.textContent = `Groot's Playlist: ${firstSong}`;
+    grootPlaylistElement.textContent = `Groot's Playlist: ${grootSongs}`;
     playlistsDiv.appendChild(grootPlaylistElement);
 
 //Creating and appending Star Lord's Playlist to the div element to display the text
     let starlordPlaylistElement = document.createElement('p');
-    starlordPlaylistElement.textContent = `Star Lord's Playlist: ${firstSong}`;
+    starlordPlaylistElement.textContent = `Star Lord's Playlist: ${starlordSongs}`;
     playlistsDiv.appendChild(starlordPlaylistElement);
 
 //Creating and appending Drax's Playlist to the div element to display the text
     let draxPlaylistElement = document.createElement('p');
-    draxPlaylistElement.textContent = `Drax's Playlist: ${firstSong}`;
+    draxPlaylistElement.textContent = `Drax's Playlist: ${draxSongs}`;
     playlistsDiv.appendChild(draxPlaylistElement);
 
 //Creating and appending Gamora's Playlist to the div element to display the text
     let gamoraPlaylistElement = document.createElement('p');
-    gamoraPlaylistElement.textContent = `Gamora's Playlist: ${firstSong}`;
+    gamoraPlaylistElement.textContent = `Gamora's Playlist: ${gamoraSongs}`;
     playlistsDiv.appendChild(gamoraPlaylistElement);
 
 //Creating and appending Rocket's Playlist to the div element to display the text
     let rocketPlaylistElement = document.createElement('p');
-    rocketPlaylistElement.textContent = `Rocket's Playlist: ${firstSong}`;
+    rocketPlaylistElement.textContent = `Rocket's Playlist: ${rocketSongs}`;
     playlistsDiv.appendChild(rocketPlaylistElement);
-
 }
 
 // Call generatePlaylist and display the playlists for each Guardian
