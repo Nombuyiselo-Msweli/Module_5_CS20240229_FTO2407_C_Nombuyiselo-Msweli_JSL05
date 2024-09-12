@@ -47,11 +47,11 @@ const rocketPlaylist = songs.filter(preference => preference.genre === "Grunge")
 
 function generatePlaylist(guardians, songs) {                          
     // Use the map() function to create playlists for each Guardian   
-const grootSongs = grootPlaylist.map(preference => preference.title + "" + preference.artist)
-const starlordSongs = startlordPlaylist.map(preference => preference.title + ""+ preference.artist)
-const draxSongs = draxPlaylist.map(preference => preference.title +""+ preference.artist)
-const gamoraSongs = gamoraPlaylist.map(preference => preference.title + "" + preference.artist)
-const rocketSongs = rocketPlaylist.map(preference => preference.title +"" + preference.artist)
+const grootSongs = grootPlaylist.map(preference => preference.title + " " + preference.artist)
+const starlordSongs = startlordPlaylist.map(preference => preference.title + " "+ preference.artist)
+const draxSongs = draxPlaylist.map(preference => preference.title +" "+ preference.artist)
+const gamoraSongs = gamoraPlaylist.map(preference => preference.title + " " + preference.artist)
+const rocketSongs = rocketPlaylist.map(preference => preference.title +" " + preference.artist)
     
     //=== MY CODE, TO CREATE A NEW PARAGRAPH ELEMENT AND DISPLAY IT FOR EACH PLAYLIST ===
 //enabling display plai=ylists functionality
