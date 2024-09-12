@@ -37,3 +37,8 @@ p {
     text-decoration: none; /* Remove underline on hover */
     color: #00FF00; /* Green color on hover */
 }
+
+div {
+    display: flex;
+    text-wrap: wrap;
+}
